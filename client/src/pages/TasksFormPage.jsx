@@ -6,7 +6,7 @@ import { toast } from 'react-hot-toast';
 
 export function TasksFormPage() {
 
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue, reset } = useForm();
 
     const navigate = useNavigate();
     const param = useParams();
@@ -42,10 +42,15 @@ export function TasksFormPage() {
                 setValue('title', res.data.title)
                 setValue('description', res.data.description)
 
+            }else{
+                reset({
+                    title: '',
+                    description: ''
+                });
             }
         }
         loadTask();
-    }, []);
+    }, [param.id, setValue, reset]);
 
     return (
         <div className='max-w-xl mx-auto'>

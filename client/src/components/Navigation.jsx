@@ -7,7 +7,7 @@ export function Navigation() {
                 <h1 className="font-bold text-3xl mb-4">Task app</h1>
             </Link>
             <button className="bg-indigo-500 px-3 py-2 rounded-lg">
-                <Link to="/tasks-create">create task</Link>
+                <Link to="/tasks-create">Create new</Link>
 
             </button>
         </div>
