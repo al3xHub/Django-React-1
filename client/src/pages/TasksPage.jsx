@@ -1,5 +1,5 @@
+import { TasksList } from "../components/TaskList";
+
 export function TasksPage(){
-    return(
-        <div>Tasks Page</div>
-    )
+    return <TasksList/>;
 }
