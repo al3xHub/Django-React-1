@@ -2,22 +2,25 @@
     "version": 2,
     "builds": [
       {
-        "src": "drfReactApp/wsgi.py",
-        "use": "@vercel/python"
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "client/build"
+        }
       },
       {
-        "src": "client/package.json",
-        "use": "@vercel/next"
+        "src": "drfReactApp/drfReactApp/wsgi.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/drfReactApp/wsgi.py"
+        "dest": "drfReactApp/drfReactApp/wsgi.py"
       },
       {
         "src": "/(.*)",
-        "dest": "/client/$1"
+        "dest": "/client/build/$1"
       }
     ]
   }
