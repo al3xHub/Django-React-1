@@ -14,7 +14,7 @@ export function TasksFormPage() {
     const onSubmit = handleSubmit(async data => {
         if (param.id) {
             await updateTask(param.id, data);
-            toast.success("Tarea actualizada!", {
+            toast.success("Task updated!", {
                 position: 'bottom-right', style: {
                     background: '#101010',
                     color: '#fff'
@@ -23,7 +23,7 @@ export function TasksFormPage() {
             )
         } else {
             await createTask(data);
-            toast.success("Tarea creada!", {
+            toast.success("Task created!", {
                 position: 'bottom-right', style: {
                     background: '#101010',
                     color: '#fff'
@@ -73,7 +73,7 @@ export function TasksFormPage() {
                     className='bg-zinc-700 p-3 rounded-lg block w-full mb-3'
                 ></textarea>
 
-                {errors.description && <span>This field is required</span>}
+                {errors.description && <span>This file is required</span>}
 
                 <button className='bg-indigo-500 p-3 rounded-lg block w-full mt-3'>Save</button>
             </form>
@@ -86,7 +86,7 @@ export function TasksFormPage() {
                             if (accepted) {
                                 await deleteTask(param.id);
 
-                                toast.success("Tarea eliminada!", {
+                                toast.success("Task deleted!", {
                                     position: 'bottom-right', style: {
                                         background: '#101010',
                                         color: '#fff'
