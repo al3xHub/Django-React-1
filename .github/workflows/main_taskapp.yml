@@ -15,12 +15,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out repository
+        uses: actions/checkout@v3  # Asegúrate de usar la versión más reciente
 
-      - name: Set up Python version
-        uses: actions/setup-python@v4
+      - name: Set up Python
+        uses: actions/setup-python@v4  # La versión v4 ya debería ser compatible con Node.js 20
         with:
-          python-version: '3.11'
+          python-version: '3.x'
 
       - name: Create and start virtual environment
         run: |
