@@ -25,19 +25,19 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          cd drfReactApp
+          
           python -m venv venv
           source venv/bin/activate
       
       - name: |
-          cd drfReactApp
+          
           python -m pip install --upgrade pip
           Install dependencies
         run: pip install -r requirements.txt
 
       - name: Collect static files
         run: |
-          cd drfReactApp
+          
           python manage.py collectstatic --noinput
 
         
@@ -45,7 +45,7 @@ jobs:
 
       - name: Zip artifact for deployment
         run: |
-          cd drfReactApp
+          
           zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
@@ -53,7 +53,7 @@ jobs:
         with:
           name: python-app
           path: |
-            drfReactApp/release.zip
+            release.zip
             !venv/
 
   deploy:
