@@ -37,7 +37,7 @@ jobs:
 
       - name: Collect static files
         run: |
-          
+          cd drfReactApp
           python manage.py collectstatic --noinput
 
         
