@@ -25,9 +25,8 @@ jobs:
 
       - name: Create and start virtual environment
         run: |
-          cd drfReact
           python -m venv venv
-          source venv/bin/activate
+          source drfReact/venv/bin/activate
       
       - name: |
           cd drfReactApp
