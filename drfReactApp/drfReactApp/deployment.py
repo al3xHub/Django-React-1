@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from .settings import *
 from .settings import BASE_DIR
 
@@ -43,4 +44,8 @@ DATABASES = {
     }
 }
 
-STATIC_ROOT = BASE_DIR/"staticfiles"
+# Asegúrate de que BASE_DIR sea un objeto Path
+if isinstance(BASE_DIR, str):
+    BASE_DIR = Path(BASE_DIR)
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
