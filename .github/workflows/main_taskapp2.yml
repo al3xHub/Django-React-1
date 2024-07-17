@@ -28,7 +28,6 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-          cd drfReactApp
           python -m pip install --upgrade pip
         run: pip install -r requirements.txt
 
