@@ -28,6 +28,8 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
+          cd drfReactApp
+          python -m pip install --upgrade pip
         run: pip install -r requirements.txt
 
       - name: Collect static files
@@ -45,7 +47,7 @@ jobs:
         with:
           name: python-app
           path: |
-            release.zip
+            drfReactApp/release.zip
             !venv/
 
   deploy:
