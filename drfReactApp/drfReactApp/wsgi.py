@@ -11,7 +11,9 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+# Determine which settings to use based on the environment
 settings_module = 'drfReactApp.deployment' if 'WEBSITE_HOSTNAME' in os.environ else 'drfReactApp.settings'
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', settings_module)
 
+# Create the WSGI application
 application = get_wsgi_application()
