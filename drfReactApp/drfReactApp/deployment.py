@@ -20,7 +20,7 @@ MIDDLEWARE = [
 ]
 
 #CORS_ALLOWED_ORIGINS = []
-#
+##
 
 
 STORAGES = {
